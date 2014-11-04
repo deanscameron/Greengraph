@@ -6,6 +6,6 @@ setup(
     name = "Greengraph",
     version = "0.1",
     packages = find_packages(exclude=['*test']),
-    scripts = ['scripts/greengraph'],
+    scripts = ['scripts\greengraph'],
     install_requires = ['geopy', 'pypng', 'requests', 'argparse']
 )

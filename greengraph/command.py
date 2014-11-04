@@ -1,7 +1,7 @@
 """Command file to execute greengraph"""
 
 from argparse import ArgumentParser
-from greengraph import greengraph
+from greengrapher import greengraph
 
 def process():
    parser = ArgumentParser(description = "Run Greengraph between given cities")
@@ -17,4 +17,3 @@ def process():
 
 if __name__ == "__main__":
     process()
-
