@@ -2,7 +2,5 @@
 
 """Script that executes greengraph"""
 
-
-from greengraph import greengraph 
-
-greengraph("London", "Birmingham", steps = 10)
+from greengraph.command import process
+process()
