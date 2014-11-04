@@ -13,12 +13,12 @@ def location_sequence(start,end,steps):
   longs=linspace(start[1],end[1],steps)
   return zip(lats,longs)
  
-def greengraph(start = "London", end = "Birmingham", steps = 10):
+def greengraph(start_city, end_city, steps):
   # Count the green areas at each of these points
   [count_green_in_png(map_at(*location,zoom=10,satellite=True))
               for location in location_sequence(
-                  geolocate(start),
-                  geolocate(end),
+                  geolocate(start_city),
+                  geolocate(end_city),
                   steps)]
 
 
@@ -27,7 +27,7 @@ def greengraph(start = "London", end = "Birmingham", steps = 10):
   matplotlib.use('Agg')
   import matplotlib.pyplot as plt
   with open('green.png','w') as green:
-      green.write(show_green_in_png(map_at(*geolocate(start),
+      green.write(show_green_in_png(map_at(*geolocate(start_city),
           zoom=10,satellite=True)))
 
 		
@@ -35,8 +35,8 @@ def greengraph(start = "London", end = "Birmingham", steps = 10):
       count_green_in_png(
           map_at(*location,zoom=10,satellite=True))
             for location in location_sequence(
-                geolocate(start),
-                geolocate(end),steps)])
+                geolocate(start_city),
+                geolocate(end_city),steps)])
 
   # Save the plot as a file 'greengraph.png'
   plt.savefig('greengraph.png')
